@@ -1,0 +1,92 @@
+[2023-04-10 15:07:16] This is codeql execute queries -J-Xmx1974M --off-heap-ram=1974 --verbosity=progress --logdir=D:\Works\Moonlay\Shannon\qcve\databases\ssl\codeql_db\log --evaluator-log-level=5 --warnings=show --qlconfig-file=D:\Works\Moonlay\Shannon\qcve\databases\ssl\qlconfig.yml --no-rerun --output=D:\Works\Moonlay\Shannon\qcve\databases\ssl\codeql_db\results -- D:\Works\Moonlay\Shannon\qcve\databases\ssl\codeql_db\db-javascript ./query
+[2023-04-10 15:07:16] Calling plumbing command: codeql resolve queries --qlconfig-file=D:\Works\Moonlay\Shannon\qcve\databases\ssl\qlconfig.yml --format=json -- ./query
+[2023-04-10 15:07:16] [SPAMMY] resolve queries> Scanning for QL files at D:\Works\Moonlay\Shannon\qcve\databases\ssl\query.
+[2023-04-10 15:07:16] [PROGRESS] resolve queries> Recording pack reference (anonymous QL pack at .\query\anything) at .\query.
+[2023-04-10 15:07:16] [SPAMMY] resolve queries> Found 1 QL files in D:\Works\Moonlay\Shannon\qcve\databases\ssl\query.
+[2023-04-10 15:07:16] Plumbing command codeql resolve queries completed:
+                      [
+                        "D:\\Works\\Moonlay\\Shannon\\qcve\\databases\\ssl\\query\\empty-block.ql"
+                      ]
+[2023-04-10 15:07:16] Refusing fancy output: Cannot detect terminal size on this platform
+[2023-04-10 15:07:16] Creating executor with 1 threads.
+[2023-04-10 15:07:16] Clearing disk cache since the version file D:\Works\Moonlay\Shannon\qcve\databases\ssl\codeql_db\db-javascript\default\cache\version does not exist
+[2023-04-10 15:07:16] Tuple pool not found. Clearing relations with cached strings
+[2023-04-10 15:07:16] Trimming disk cache at D:\Works\Moonlay\Shannon\qcve\databases\ssl\codeql_db\db-javascript\default\cache in mode brutal.
+[2023-04-10 15:07:16] Sequence stamp origin is -6333556184536677880
+[2023-04-10 15:07:16] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2023-04-10 15:07:16] Unpausing evaluation
+[2023-04-10 15:07:16] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2023-04-10 15:07:16] Unpausing evaluation
+[2023-04-10 15:07:16] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2023-04-10 15:07:16] Unpausing evaluation
+[2023-04-10 15:07:16] Trimming completed (16ms): Purged everything.
+[2023-04-10 15:07:17] Calling plumbing command: codeql resolve extensions --qlconfig-file=D:\Works\Moonlay\Shannon\qcve\databases\ssl\qlconfig.yml ./query
+[2023-04-10 15:07:17] Calling plumbing command: codeql resolve queries --qlconfig-file=D:\Works\Moonlay\Shannon\qcve\databases\ssl\qlconfig.yml --format startingpacks -- ./query
+[2023-04-10 15:07:17] [SPAMMY] resolve queries> Scanning for QL files at D:\Works\Moonlay\Shannon\qcve\databases\ssl\query.
+[2023-04-10 15:07:17] [PROGRESS] resolve queries> Recording pack reference (anonymous QL pack at .\query\anything) at .\query.
+[2023-04-10 15:07:17] [SPAMMY] resolve queries> Found 1 QL files in D:\Works\Moonlay\Shannon\qcve\databases\ssl\query.
+[2023-04-10 15:07:17] Plumbing command codeql resolve queries completed:
+                      [
+                        ".\\query"
+                      ]
+[2023-04-10 15:07:17] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { }
+                      }
+[2023-04-10 15:07:17] [DETAILS] execute queries> Did not find any ML models.
+[2023-04-10 15:07:17] Calling plumbing command: codeql resolve library-path --qlconfig-file=D:\Works\Moonlay\Shannon\qcve\databases\ssl\qlconfig.yml --query=D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql --format=json
+[2023-04-10 15:07:17] [DETAILS] resolve library-path> Resolving query at normalized path D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql.
+[2023-04-10 15:07:17] [DETAILS] resolve library-path> Found no pack; trying after symlink resolution with D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql.
+[2023-04-10 15:07:17] [DETAILS] resolve library-path> Found enclosing pack 'query' at D:\Works\Moonlay\Shannon\qcve\databases\ssl\query.
+[2023-04-10 15:07:17] [DETAILS] resolve library-path> Adding compilation cache at C:\Users\arbom\.codeql\compile-cache.
+[2023-04-10 15:07:17] [DETAILS] resolve library-path> Resolving library dependencies from D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql.
+[2023-04-10 15:07:17] [SPAMMY] resolve library-path> [INCOMPATIBILITY] <anonymous pack>: not 0.0.0 {root: <anonymous pack>@0.0.0}
+[2023-04-10 15:07:17] [SPAMMY] resolve library-path> [DERIVATION] <anonymous pack>: 0.0.0 {<anonymous pack>: not 0.0.0 {root: <anonymous pack>@0.0.0}}
+[2023-04-10 15:07:17] [SPAMMY] resolve library-path> [DECISION 1] <anonymous pack>: 0.0.0
+[2023-04-10 15:07:17] [DETAILS] resolve library-path> QL pack dependencies for D:\Works\Moonlay\Shannon\qcve\databases\ssl\query resolved OK.
+[2023-04-10 15:07:17] [DETAILS] resolve library-path> Found no dbscheme through dependencies.
+[2023-04-10 15:07:17] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "D:\\Works\\Moonlay\\Shannon\\qcve\\databases\\ssl\\query"
+                        ],
+                        "compilationCache" : [
+                          "C:\\Users\\arbom\\.codeql\\compile-cache"
+                        ],
+                        "relativeName" : "query\\empty-block.ql",
+                        "possibleAdvice" : "There should probably be a qlpack.yml file declaring dependencies in D:\\Works\\Moonlay\\Shannon\\qcve\\databases\\ssl\\query or an enclosing directory.",
+                        "qlPackName" : "query"
+                      }
+[2023-04-10 15:07:17] [PROGRESS] execute queries> Compiling query plan for D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql.
+[2023-04-10 15:07:17] [DETAILS] execute queries> Resolving imports for D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql.
+[2023-04-10 15:07:17] Resolved file set for D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql hashes to 7d6de5d73bb159b1fdbaf9ab7a0b24caa7d62b59.
+[2023-04-10 15:07:17] [DETAILS] execute queries> Checking QL for D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql.
+[2023-04-10 15:07:17] ExternalModuleBindingPass ...
+[2023-04-10 15:07:17] ExternalModuleBindingPass time: 00:00.022
+[2023-04-10 15:07:17] QLPredicateSynthesiser ...
+[2023-04-10 15:07:17] QLPredicateSynthesiser time: 00:00.004
+[2023-04-10 15:07:17] DeclarationBindingPass ...
+[2023-04-10 15:07:17] DeclarationBindingPass time: 00:00.027
+[2023-04-10 15:07:17] Fixed point time ...
+[2023-04-10 15:07:18] Fixed point time time: 00:00.040
+[2023-04-10 15:07:18] ReferenceBindingPass ...
+[2023-04-10 15:07:18] ReferenceBindingPass time: 00:00.000
+[2023-04-10 15:07:18] PopulateInstantiationMapPass ...
+[2023-04-10 15:07:18] PopulateInstantiationMapPass time: 00:00.002
+[2023-04-10 15:07:18] ReferenceBindingCheck ...
+[2023-04-10 15:07:18] ReferenceBindingCheck time: 00:00.004
+[2023-04-10 15:07:18] PredicateBodyBindingPass ...
+[2023-04-10 15:07:18] PredicateBodyBindingPass time: 00:00.003
+[2023-04-10 15:07:18] LanguagePragmaPropagationPass ...
+[2023-04-10 15:07:18] LanguagePragmaPropagationPass time: 00:00.000
+[2023-04-10 15:07:18] Ambiguity checks ...
+[2023-04-10 15:07:18] Ambiguity checks time: 00:00.004
+[2023-04-10 15:07:18] Ql checks ...
+[2023-04-10 15:07:18] Ql checks time: 00:00.109
+[2023-04-10 15:07:18] [ERROR] execute queries> ERROR: Could not resolve module javascript. There should probably be a qlpack.yml file declaring dependencies in D:\Works\Moonlay\Shannon\qcve\databases\ssl\query or an enclosing directory. (D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql:8,8-18)
+[2023-04-10 15:07:18] [ERROR] execute queries> ERROR: Could not resolve type BlockStmt (D:\Works\Moonlay\Shannon\qcve\databases\ssl\query\empty-block.ql:10,6-15)
+[2023-04-10 15:07:18] Pausing evaluation to close the cache at sequence stamp o+3
+[2023-04-10 15:07:18] The disk cache is freshly trimmed; leave it be.
+[2023-04-10 15:07:18] Unpausing evaluation
+[2023-04-10 15:07:18] Exiting with code 2
