@@ -24,6 +24,7 @@ jobs:
         uses: github/codeql-action/init@v2
         # Override language selection by uncommenting this and choosing your languages
         with:
+           db-location: '${{ github.workspace }}/codeql_dbs'
            languages: javascript
 
       # Autobuild attempts to build any compiled languages (C/C++, C#, Go, or Java).
