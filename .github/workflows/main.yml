@@ -23,7 +23,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
-           db-location: '${{ github.workspace }}/databases/ssl'
+           db-location: '${{ github.workspace }}/databases/openssl'
            languages: javascript
            config-file: ./.github/codeql/codeql-config.yml
       - name: Autobuild
