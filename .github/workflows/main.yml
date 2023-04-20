@@ -40,7 +40,7 @@ jobs:
 
       - name: CodeQL Scan
         id: scan
-        uses: maulanardy/codeql-sample-action@v1.14
+        uses: maulanardy/codeql-sample-action@v1.15
         with:
           username: 'example'
           report: '${{ github.workspace }}/output'
