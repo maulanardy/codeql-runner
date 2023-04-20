@@ -37,6 +37,8 @@ jobs:
     steps:
       - name: CodeQL Scan
         id: scan
-        uses: maulanardy/codeql-sample-action@v1.12
+        uses: maulanardy/codeql-sample-action@v1.13
         with:
-          username: 'bambang'
+          username: 'example'
+          report: '${{ github.workspace }}/output'
+          query: '${{ github.workspace }}/queries/example'

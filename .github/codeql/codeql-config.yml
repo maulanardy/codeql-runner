@@ -1,5 +1,0 @@
-queries:
-  - uses: ./queries
-disable-default-queries: true
-paths:
-  - code/openssl
