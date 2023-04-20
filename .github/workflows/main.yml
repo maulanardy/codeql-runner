@@ -35,9 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Runner
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: CodeQL Scan
         id: scan
-        uses: maulanardy/codeql-sample-action@v1.13
+        uses: maulanardy/codeql-sample-action@v1.14
         with:
           username: 'example'
           report: '${{ github.workspace }}/output'
