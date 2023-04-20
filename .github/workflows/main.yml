@@ -37,6 +37,6 @@ jobs:
     steps:
       - name: CodeQL Scan
         id: scan
-        uses: maulanardy/codeql-sample-action@v1.11
+        uses: maulanardy/codeql-sample-action@v1.12
         with:
           username: 'bambang'
