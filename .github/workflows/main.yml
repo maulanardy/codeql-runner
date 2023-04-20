@@ -3,42 +3,38 @@ name: "Code Scanning - Action"
 on: [push]
 
 jobs:
-  CodeQL-Build:
-    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
-    runs-on: ubuntu-latest
-
-    permissions:
-      # required for all workflows
-      security-events: write
-
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Initializes the CodeQL tools for scanning.
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-           db-location: '${{ github.workspace }}/databases/openssl'
-           languages: cpp
-           config-file: ./.github/codeql/codeql-config.yml
-      # - name: Autobuild
-      #   uses: github/codeql-action/autobuild@v2
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
-  # manual_scan:
+  # CodeQL-Build:
+  #   # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
   #   runs-on: ubuntu-latest
-  #   name: Runner
+
+  #   permissions:
+  #     # required for all workflows
+  #     security-events: write
+
+  #     # only required for workflows in private repositories
+  #     actions: read
+  #     contents: read
+
   #   steps:
-  #     - name: CodeQL Scan
-  #       id: scan
-  #       uses: maulanardy/codeql-sample-action@v1.3
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+
+  #     # Initializes the CodeQL tools for scanning.
+  #     - name: Initialize CodeQL
+  #       uses: github/codeql-action/init@v2
   #       with:
-  #         who-to-greet: 'Lorem'
-  #     - name: Get the output time
-  #       run: echo "The time was ${{ steps.scan.outputs.time }}"
+  #          db-location: '${{ github.workspace }}/databases/openssl'
+  #          languages: cpp
+  #          config-file: ./.github/codeql/codeql-config.yml
+  #     # - name: Autobuild
+  #     #   uses: github/codeql-action/autobuild@v2
+
+  #     - name: Perform CodeQL Analysis
+  #       uses: github/codeql-action/analyze@v2
+  manual_scan:
+    runs-on: ubuntu-latest
+    name: Runner
+    steps:
+      - name: CodeQL Scan
+        id: scan
+        uses: maulanardy/codeql-sample-action@v1.4
