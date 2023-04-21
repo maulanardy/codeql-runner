@@ -1,6 +1,8 @@
 name: "QCVE - Code Scanning"
 
-on: [push]
+on:   
+  pull_request:
+    branches: [ main ]
 
 jobs:
   # CodeQL-Build:
@@ -45,3 +47,13 @@ jobs:
           username: 'john'
           report: '${{ github.workspace }}/output'
           query: '${{ github.workspace }}/queries/john'
+      - name: Commit report
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "Add report"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
