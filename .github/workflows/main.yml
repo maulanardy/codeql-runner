@@ -49,8 +49,8 @@ jobs:
           query: '${{ github.workspace }}/queries/john'
       - name: Commit report
         run: |
-          git config --local user.email "qcve-actions[bot]@noreply.github.com"
-          git config --local user.name "qcve-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add .
           git commit -a -m "Add report"
       - name: Push changes
