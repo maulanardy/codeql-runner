@@ -39,6 +39,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
       - name: CodeQL Scan
         id: scan
@@ -47,14 +50,16 @@ jobs:
           username: 'john'
           report: '${{ github.workspace }}/output'
           query: '${{ github.workspace }}/queries/john'
+
       - name: Commit report
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add output
           git commit -a -m "Add report"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: ${{ github.head_ref }}
