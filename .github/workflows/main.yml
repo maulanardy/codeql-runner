@@ -14,14 +14,31 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: username-match
+        with:
+          text: ${{ github.event.pull_request.body }} 
+          # regex: '^\w+:\s(.+#\d+).*$'
+          regex: '^\username.*?(\w+)'
+      - name: Echo extracted username
+        run: |
+          echo "${{ steps.username-match.outputs.group1 }}"
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: database-match
+        with:
+          text: ${{ github.event.pull_request.body }} 
+          regex: '^\database.*?(\w+)'
+      - name: Echo extracted database
+        run: |
+          echo "${{ steps.database-match.outputs.group1 }}"
       - name: CodeQL Scan
         id: scan
-        uses: maulanardy/codeql-sample-action@v1.17
+        uses: maulanardy/codeql-sample-action@v1.18
         with:
-          username: 'john'
-          report: '${{ github.workspace }}/output/john'
-          query: '${{ github.workspace }}/queries/john'
+          username: ${{ steps.username-match.outputs.group1 }}
+          report: '${{ github.workspace }}/output/${{ steps.username-match.outputs.group1 }}'
+          query: '${{ github.workspace }}/queries/${{ steps.username-match.outputs.group1 }}'
+          database: ${{ steps.database-match.outputs.group1 }}
 
       - name: Commit report
         run: |
