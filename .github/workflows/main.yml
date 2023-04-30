@@ -19,17 +19,20 @@ jobs:
         with:
           text: ${{ github.event.pull_request.body }} 
           regex: '#username=(\w+)'
-      - name: Echo extracted username
+      - name: Extracted username exist
         run: |
           echo "${{ steps.username-match.outputs.group1 }}"
+        if: ${{ steps.username-match.outputs.group1 != '' }}
+  
       - uses: actions-ecosystem/action-regex-match@v2.0.2
         id: database-match
         with:
           text: ${{ github.event.pull_request.body }} 
           regex: '#database=(\w+)'
-      - name: Echo extracted database
+      - name: Extracted database exist
         run: |
           echo "${{ steps.database-match.outputs.group1 }}"
+        if: ${{ steps.database-match.outputs.group1 != '' }}
       - name: CodeQL Scan
         id: scan
         uses: maulanardy/codeql-sample-action@v1.18
