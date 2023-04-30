@@ -19,8 +19,7 @@ jobs:
         with:
           text: ${{ github.event.pull_request.body }} 
           # regex: '^/label\s*(.*?)\s*$'
-          regex: '^[A-Za-z_"]+:\s+.*$'
-          flags: m
+          regex: '^label\s*(.*?)\s*$'
       - name: Echo extracted username
         run: |
           echo "${{ steps.username-match.outputs.match }}"
