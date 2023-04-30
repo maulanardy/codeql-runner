@@ -14,7 +14,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-      - uses: actions-ecosystem/action-regex-match@v2
+      - uses: actions-ecosystem/action-regex-match@v2.0.2
         id: username-match
         with:
           text: ${{ github.event.pull_request.body }} 
@@ -22,8 +22,8 @@ jobs:
           regex: '^/label\s*(.*?)\s*$'
       - name: Echo extracted username
         run: |
-          echo "${{ steps.username-match.outputs.group1 }}"
-      - uses: actions-ecosystem/action-regex-match@v2
+          echo "${{ steps.username-match.outputs.match }}"
+      - uses: actions-ecosystem/action-regex-match@v2.0.2
         id: database-match
         with:
           text: ${{ github.event.pull_request.body }} 
