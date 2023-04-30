@@ -26,7 +26,7 @@ jobs:
         id: database-match
         with:
           text: ${{ github.event.pull_request.body }} 
-          regex: 'username.*?(\w+).*$'
+          regex: 'database.*?(\w+).*$'
       - name: Echo extracted database
         run: |
           echo "${{ steps.database-match.outputs.group1 }}"
