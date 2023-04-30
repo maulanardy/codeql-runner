@@ -26,7 +26,6 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        fail-fast: true
       - uses: actions-ecosystem/action-regex-match@v2.0.2
         id: database-match
         with:
@@ -39,7 +38,6 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        fail-fast: true
       - name: CodeQL Scan
         id: scan
         uses: maulanardy/codeql-sample-action@v1.18
