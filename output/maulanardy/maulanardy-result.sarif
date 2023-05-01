@@ -923,7 +923,110 @@
         } ]
       } ]
     },
-    "results" : [ ],
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "wycheproof/javascript/webcryptoapi/testcases/AesGcmTest.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "wycheproof/javascript/webcryptoapi/testcases/EcdhTest.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "wycheproof/javascript/webcryptoapi/testcases/EcdsaTest.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "javascript/example/empty-block",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "javascript/example/empty-block",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "This is an updated query of empty block."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "wycheproof/javascript/webcryptoapi/testcases/AesGcmTest.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 72,
+            "startColumn" : 25,
+            "endColumn" : 27
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "bdee423f51efdd3c:1",
+        "primaryLocationStartColumnFingerprint" : "24"
+      }
+    }, {
+      "ruleId" : "javascript/example/empty-block",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "javascript/example/empty-block",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "This is an updated query of empty block."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "wycheproof/javascript/webcryptoapi/testcases/EcdhTest.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 36,
+            "startColumn" : 23,
+            "endColumn" : 25
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "da52d2e157126cd4:1",
+        "primaryLocationStartColumnFingerprint" : "22"
+      }
+    }, {
+      "ruleId" : "javascript/example/empty-block",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "javascript/example/empty-block",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "This is an updated query of empty block."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "wycheproof/javascript/webcryptoapi/testcases/EcdsaTest.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 39,
+            "startColumn" : 24,
+            "endColumn" : 26
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "751ca4d225f50144:1",
+        "primaryLocationStartColumnFingerprint" : "23"
+      }
+    } ],
     "newlineSequences" : [ "\r\n", "\n", " ", " " ],
     "columnKind" : "utf16CodeUnits",
     "properties" : {
