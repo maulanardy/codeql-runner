@@ -1,3 +1,10 @@
+/**
+ * @name No Effect
+ * @kind problem
+ * @problem.severity warning
+ * @id javascript/example/no-effect
+ */
+
 import javascript
 
 from Expr e
