@@ -19,9 +19,9 @@ jobs:
         with:
           text: ${{ github.event.pull_request.body }} 
           regex: '#username=(\w+)'
-      - name: Extracted username not exist
+      - name: Extracted username exist
         run: |
-          if [ "${{ steps.username-match.outputs.group1 }}" = "" ]; then
+          if [ "${{ steps.username-match.outputs.group1 }}" == "" ]; then
             echo "::error::Username not defined"
             exit 1
           fi
@@ -32,11 +32,10 @@ jobs:
           regex: '#database=(\w+)'
       - name: Extracted database exist
         run: |
-          echo "Error: ${{ steps.database-match.outputs.group1 }}"
-        if: ${{ steps.database-match.outputs.group1 == '' }}
-        shell: bash
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          if [ "${{ steps.database-match.outputs.group1 }}" == "" ]; then
+            echo "::error::Database not defined"
+            exit 1
+          fi
       - name: CodeQL Scan
         id: scan
         uses: maulanardy/codeql-sample-action@v1.18
