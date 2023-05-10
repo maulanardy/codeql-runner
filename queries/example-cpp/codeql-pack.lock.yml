@@ -1,14 +1,12 @@
 ---
 lockVersion: 1.0.0
 dependencies:
-  codeql/python-all:
-    version: 0.9.1
-  codeql/regex:
-    version: 0.0.12
+  codeql/cpp-all:
+    version: 0.7.1
+  codeql/ssa:
+    version: 0.0.16
   codeql/tutorial:
     version: 0.0.9
   codeql/util:
     version: 0.0.9
-  codeql/yaml:
-    version: 0.0.1
 compiled: false
