@@ -1,12 +1,12 @@
 /**
- * @name Empty block
+ * @name Empty scope
  * @kind problem
  * @problem.severity warning
- * @id javascript/example/empty-block
+ * @id python/example/empty-scope
  */
 
-import javascript
-
-from BlockStmt b
-where b.getNumStmt() = 0
-select b, "This is an updated query of empty block."
+ import python
+ 
+ from Scope s
+ where count(s.getAStmt()) = 0
+ select s, "This is an empty scope."
